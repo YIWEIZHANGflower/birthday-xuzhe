@@ -19,3 +19,96 @@
 .cake-realistic{width:calc(100% + 28px);max-width:410px;margin:29px -14px 22px;isolation:isolate}.cake-realistic:before{content:"";position:absolute;left:12%;right:12%;top:19%;bottom:11%;background:radial-gradient(ellipse,#b780302e,transparent 72%);z-index:-1}.cake-photo{width:100%;position:relative}.cake-photo>img{display:block;width:100%;height:auto;filter:drop-shadow(0 18px 16px #070c104d);pointer-events:none;user-select:none}.cake-realistic .cake-caption{margin-top:1px;color:#c6b495;letter-spacing:.07em}.live-flame{position:absolute;top:4.3%;width:clamp(12px,3.7vw,17px);height:clamp(25px,7vw,33px);transform:translate(-50%,-100%);pointer-events:none;opacity:1;transition:opacity .22s}.candle-two{left:44.5%}.candle-zero{left:60.2%}.live-flame i{display:block;width:100%;height:100%;border-radius:70% 30% 52% 48%;background:linear-gradient(0deg,#e88722,#ffbf4c 55%,#ffe59a);box-shadow:0 0 11px 3px #f9b34b55;transform:rotate(-7deg);transform-origin:50% 100%;animation:live-fire 1.25s ease-in-out infinite alternate}.candle-zero i{animation-delay:-.5s}.live-flame i:after{content:"";position:absolute;left:31%;bottom:9%;width:43%;height:54%;border-radius:60% 40% 50% 50%;background:#fff6cd}.blown .live-flame{opacity:0}.blown .live-flame i{animation:none}.photo-smoke{position:absolute;top:2%;height:18px;width:11px;border:2px solid #bdc8cd80;border-right-color:transparent;border-bottom-color:transparent;border-radius:50%;opacity:0;pointer-events:none}.smoke-two{left:43.5%}.smoke-zero{left:59.2%}.blown .photo-smoke{animation:photo-smoke 1.35s ease-out both}@keyframes live-fire{to{transform:rotate(4deg) scale(.88,1.06)}}@keyframes photo-smoke{15%{opacity:.7}to{opacity:0;transform:translate(8px,-37px) scale(1.8)}}
 @media(max-height:720px){.cake-realistic{max-width:310px;margin-top:26px;margin-bottom:19px}.live-flame{width:13px;height:26px}.cake-realistic .cake-caption{margin-top:2px}}
 @media(prefers-reduced-motion:reduce){.live-flame i{animation:none!important}.photo-smoke{display:none}}
+
+/* Portrait phones: each scene uses the visible browser height, including WeChat chrome. */
+@media (max-width:649px) and (min-height:600px) and (orientation:portrait) {
+  .experience {
+    height:100svh;
+    height:100dvh;
+    min-height:0;
+    display:grid;
+    grid-template-rows:60px minmax(0,1fr) 30px;
+    overflow:clip;
+    padding:env(safe-area-inset-top) max(22px,env(safe-area-inset-right)) env(safe-area-inset-bottom) max(22px,env(safe-area-inset-left));
+  }
+  .topbar {height:auto;min-width:0;padding-top:0;gap:8px}
+  .tactical-map {min-height:0}
+  .edition {min-width:0;font-size:10px;gap:6px}
+  .music-toggle,.topbar .sound-toggle {min-height:36px;padding:5px 7px}
+  .scene {height:100%;min-height:0;padding:16px 0;container-type:size}
+  .hero-copy,.scene-copy,.primary,.quiet,.loot-pool {flex-shrink:0}
+  .subtitle,.scene-gift .subtitle {margin-bottom:12px;font-size:10px}
+  .scene-gift h1 {font-size:clamp(34px,9.2vw,44px);line-height:1.18}
+  .scene-gift .intro {margin-top:12px;font-size:12px;line-height:1.8}
+  .primary {min-height:52px;padding:12px 18px}
+  .quiet {margin-top:12px;line-height:1.6}
+  footer {position:relative;inset:auto;display:flex;align-items:center;justify-content:center;line-height:1}
+
+  .scene-gift {display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto auto auto;justify-content:stretch;justify-items:center}
+  .supply {display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;height:100%;min-height:0;margin:0;padding:8px 0 16px}
+  .case-render {width:100%;height:0;min-height:0;max-width:365px;max-height:270px;flex:1 1 0;aspect-ratio:auto;object-fit:contain}
+  .supply-caption {flex-shrink:0;min-height:16px;margin:0}
+  .loot-pool {margin-top:16px;padding-top:11px}
+  .loot-pool>p {margin-bottom:8px}
+  .pool-card img {height:46px}
+
+  .scene-unbox {justify-content:center}
+  .roller-housing {width:calc(100% + 44px);margin-top:32px;margin-bottom:8px}
+  .unlock-heading h2 {font-size:30px}
+  .unbox-result {padding-bottom:0}
+  .reward-hero {width:225px;height:225px;margin:12px 0}
+  .reward-hero img {width:190px;height:190px}
+  .unbox-result .primary {margin-top:28px}
+
+  .scene-wish {display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto auto;justify-content:stretch;justify-items:center}
+  .scene-copy h2 {font-size:clamp(30px,8vw,36px);line-height:1.25}
+  .scene-copy #wish-hint {margin-top:12px;line-height:1.7}
+  .cake-realistic {width:min(100%,calc(100dvh - 390px));max-width:410px;margin:20px 0 10px;align-self:center}
+  .cake-realistic .cake-caption {margin-top:2px}
+  @supports (height:1cqh) {
+    .cake-realistic {width:min(100%,calc(100cqh - 300px),410px)}
+  }
+
+  .scene-letter {justify-content:center;padding:12px 0}
+  .mvp-banner {padding:0 0 12px;flex-shrink:0}
+  .mvp-banner svg {width:36px;height:36px}
+  .mvp-banner strong {font-size:15px}
+  .mvp-banner>b {font-size:27px}
+  .letter-paper {padding:20px;flex-shrink:0}
+  .player-line {margin-bottom:14px}
+  .letter-paper h2 {font-size:clamp(26px,7.2vw,34px);line-height:1.2;margin-bottom:16px;letter-spacing:-.035em}
+  .letter-paper h2 br {display:none}
+  .letter-copy {font-size:clamp(12px,1.6dvh,14px);line-height:1.8}
+  .letter-copy p+p {margin-top:9px}
+  .letter-bottom {display:flex;align-items:flex-end;justify-content:space-between;gap:8px;margin-top:14px;padding-top:12px}
+  .final-wish {font-size:11px;line-height:1.8}
+  .final-wish strong {font-size:24px;white-space:nowrap}
+  .author-signature {margin-top:0;min-width:0}
+  .signature-wrap {height:64px;gap:5px}
+  .from-art {width:40px}
+  .signature-wrap .signature {width:clamp(112px,30vw,140px)}
+  #rewrite-signature {min-height:30px;padding-top:0}
+  .round-end {margin-top:14px;line-height:1.6;flex-shrink:0}
+  .replay {margin-top:0;min-height:44px;padding:10px 20px;flex-shrink:0}
+}
+@media (max-width:649px) and (min-height:600px) and (max-height:740px) and (orientation:portrait) {
+  .experience {grid-template-rows:52px minmax(0,1fr) 26px}
+  .scene {padding-top:10px;padding-bottom:10px}
+  .scene-gift .intro {font-size:11px;line-height:1.7;margin-top:10px}
+  .scene-gift h1 {font-size:34px}
+  .loot-pool {margin-top:12px;padding-top:8px}
+  .pool-card img {height:38px}
+  .quiet {margin-top:10px}
+  .scene-copy h2 {font-size:30px}
+  .scene-wish .subtitle {margin-bottom:9px}
+  .reward-hero {width:190px;height:190px}
+  .reward-hero img {width:165px;height:165px}
+  .letter-paper {padding:16px 18px}
+  .player-line {margin-bottom:10px}
+  .letter-paper h2 {margin-bottom:12px}
+  .letter-copy {font-size:12px;line-height:1.7}
+  .letter-copy p+p {margin-top:8px}
+  .letter-bottom {margin-top:10px;padding-top:8px}
+  .signature-wrap {height:56px}
+  .round-end {margin-top:10px}
+}
